@@ -2,13 +2,29 @@ import { pwa } from './config/pwa'
 import { appDescription } from './constants/index'
 
 export default defineNuxtConfig({
+  ssr: false,
+
   modules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
     '@vite-pwa/nuxt',
+    'nuxt-vuefire'
   ],
+
+  vuefire: {
+    auth: true,
+    config: {
+      apiKey: "AIzaSyBzJySXcZJgvYbXJzSe7rhDRnulMflQHZE",
+      authDomain: "cardpdfs.firebaseapp.com",
+      projectId: "cardpdfs",
+      storageBucket: "cardpdfs.appspot.com",
+      messagingSenderId: "499061288664",
+      appId: "1:499061288664:web:82c134c23a11d7b01571ad",
+      measurementId: "G-V1KQ8K4CG1"
+    },
+  },
 
   experimental: {
     // when using generate, payload js assets included in sw precache manifest
